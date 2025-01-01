@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    /* Light blue for a calm, river-like feel */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Logo style */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo img {
+    height: 100px;
+    /* Adjust size of logo */
+    width: auto;
+    /* Maintain aspect ratio */
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0077b6;
+    /* Nile River blue */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #03045e;
+    /* Deep navy blue */
+}
+
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d9e6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+select {
+    background-color: #caf0f8;
+    /* Very light blue */
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+input[type="reset"],
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="reset"] {
+    background-color: #e63946;
+    /* Soft red */
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: #0077b6;
+    /* Nile River blue */
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #d62828;
+}
+
+input[type="submit"]:hover {
+    background-color: #023e8a;
+}
+
+/* Background Elements */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000066 0%, #99ccff 100%);
+    /* Sky-blue background for upper part */
+    z-index: -1;
+}
+
+.error-message {
+    color: white;
+    background-color: #e63946;
+    /* Red background for errors */
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #d62828;
+    /* Darker red border */
+    font-size: 1.2rem;
+}

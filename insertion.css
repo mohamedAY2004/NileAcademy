@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    min-height: 300px;
+    /* Ensures the form has a reasonable height */
+    justify-content: space-between;
+    /* Adds space between elements */
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Styling for buttons */
+button {
+    color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Style for Delete Button */
+.Delete-Button {
+    background-color: #ff4d4d;
+    /* Red for delete */
+    color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Delete-Button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover effect for Delete Button */
+.Delete-Button:hover {
+    background-color: #e60000;
+    /* Darker red on hover */
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+}
+body::before {
+    content: " ";
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height */
+    /* background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%); */
+    background: linear-gradient(to bottom, #000066 0%, #99ccff 100%);
+    z-index: -1; /* Ensure it's behind the content */
+}

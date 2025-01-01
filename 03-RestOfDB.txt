@@ -1,0 +1,132 @@
+DROP DATABASE NileAcademy;
+CREATE DATABASE NileAcademy;
+USE NileAcademy; 
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------admins
+CREATE TABLE admins(
+admin_id  INT UNSIGNED AUTO_INCREMENT,
+admin_name VARCHAR(32) NOT NULL,
+admin_pass VARCHAR(32) NOT NULL,
+admin_phone VARCHAR(32) NOT NULL UNIQUE,
+PRIMARY KEY(admin_id),
+image_name VARCHAR(50)
+);
+
+INSERT INTO admins(admin_name,admin_pass,admin_phone,image_name)
+VALUES 
+('mohamed hashim','admin1','01112273329','TeacherPlaceHolder.jpg'),
+('Ali maher','admin2','01112273328','TeacherPlaceHolder.jpg'),
+('Mohamed Waleed','admin3','01112273327','image1.jpg'),
+('Ahmed Fawzy','admin4','01112273326','image1.jpg'),
+('Hesham dahshan','admin5','01112273325','image2.jpg');
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------courses
+create table courses(
+course_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+course_name VARCHAR(32) NOT NULL,
+image_name VARCHAR(50)
+);
+INSERT INTO courses(course_name,image_name)
+VALUES 
+('Physics','Physics.jpg'),
+('Chemistry','Chemistry.jpg'),
+('Arabic','Arabic.jpg'),
+('French','French.jpg'),
+('English','English.jpg');
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------teacher
+CREATE TABLE teachers(
+teacher_id INT UNSIGNED AUTO_increment PRIMARY KEY,
+teacher_name VARCHAR(32) NOT NULL,
+teacher_phone VARCHAR(12) NOT NULL UNIQUE,
+teacher_pass VARCHAR(32) NOT NULL,
+teacher_balance INT   DEFAULT 0 ,
+course_id INT UNSIGNED ,
+FOREIGN KEY(course_id) REFERENCES courses(course_id)  ON DELETE SET NULL,
+image_name VARCHAR(50)
+);
+INSERT INTO teachers(teacher_name,teacher_phone,teacher_pass,teacher_balance,course_id,image_name)
+VALUES 
+('Nile Academy','01112273329','teacher1','63000',NULL,'nile-academy-high-resolution-logo.jpg'),
+('mohaemd ahmed ','01112273328','teacher2','4650',1,'TeacherPlaceHolder.jpg'),
+('ibrahim mohameed ','01112273327','teacher3','7675',2,'TeacherPlaceHolder.jpg'),
+('ibrahim waleed ','01112273326','teacher4','7675',3,'TeacherPlaceHolder.jpg'),
+('Mohamed fateh ','01112273325','teacher5','3500',4,'TeacherPlaceHolder.jpg'),
+('ibrahim mohameed ','01112273324','teacher6','2650',5,'TeacherPlaceHolder.jpg'),
+('ibrahim mohameed ','01112273323','teacher7','13750',5,'image1.jpg'),
+('ibrahim mohameed ','01112273322','teacher8','670',4,'TeacherPlaceHolder.jpg'),
+('mohaemd hisham ','01112273321','teacher9','13400',3,'image10.jpg');
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------students
+CREATE TABLE  students(
+student_id INT UNSIGNED AUTO_INCREMENT, 
+student_name VARCHAR(33) NOT NULL,
+student_pass VARCHAR(33)NOT NULL,
+student_phone VARCHAR(12)NOT NULL UNIQUE,
+parent_phone VARCHAR(12)NOT NULL,
+student_balance INT  NOT NULL default 0,
+PRIMARY KEY(student_id),
+image_name VARCHAR(50)
+);
+INSERT INTO students(student_name,student_pass,student_phone,parent_phone,student_balance,image_name)
+VALUES
+('ahmed ali','student1','01112273329','01112346893',150,'StudentPlaceHolder.jpg'),
+('noran mohamed','student2','01112273328','01151815432','345','StudentPlaceHolder.jpg'),
+('ahmed waleed','student3','01112273327','01112346893',575,'StudentPlaceHolder.jpg'),
+('noran alaa','student4','01112273326','01151815432','340','image5.jpg'),
+('ahmed wael','student5','01112273325','01112346893',0,'image3.jpg'),
+('mohamed salah','student6','01112273324','01151815432','135','image5.jpg');
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------lectures
+CREATE TABLE lectures (
+lecture_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+lecture_day VARCHAR(10) NOT NULL,
+starting_hour INT UNSIGNED,
+teacher_id INT unsigned,
+FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id) ON DELETE SET NULL
+);
+-- DESC lectures;
+INSERT INTO  lectures(lecture_day,starting_hour,teacher_id)
+value
+('sunday','9','6'),
+('sunday','12','6'),
+('sunday','3','5'),
+('sunday','6','4'),
+('sunday','9','2'),
+('sunday','12','3'),
+('sunday','3','3'),
+('sunday','6','3'),
+('monday','9','2'),
+('monday','12','2'),
+('monday','3','4'),
+('monday','6','4'),
+('tuesday','9','2'),
+('tuesday','12','2'),
+('tuesday','3','5'),
+('tuesday','6','6'),
+('wednesday','9','5'),
+('wednesday','12','3'),
+('wednesday','3','3'),
+('wednesday','6','3'),
+('thurasday','9','6'),
+('thurasday','12','6'),
+('thurasday','3','7'),
+('thurasday','6','7');
+-- -----------------------------------------------------------
+-- -----------------------------------------------------------invoices
+CREATE TABLE invoices(
+invoice_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+student_id INT UNSIGNED ,
+lecture_id INT UNSIGNED ,
+ammount INT UNSIGNED NOT NULL,
+attendendence TINYINT(1) DEFAULT FALSE,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE SET NULL,
+FOREIGN KEY (lecture_id) REFERENCES lectures(lecture_id) ON DELETE SET NULL
+);
+INSERT INTO invoices (student_id,lecture_id,ammount)
+values
+('1','1',65),
+('2','2',85),
+('2','2',85);
+-- SELECT * FROM teachers JOIN lectures ON lectures.teacher_id = teachers.teacher_id;

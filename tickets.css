@@ -1,0 +1,194 @@
+/* Reset padding and margin on all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure html and body elements take the full height */
+html, body {
+    min-height: 1vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background cover for the full page, including content overflow */
+body::before {
+    content: "";
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height */
+    /* background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%); */
+    background: linear-gradient(to bottom, #000066 0%, #99ccff 100%);
+    z-index: -1; /* Ensure it's behind the content */
+}
+.add-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+}
+/* Styling for the top dashboard */
+.top-dashboard {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center vertically */
+    padding: 15px 30px; /* Added padding for breathing space */
+    border-radius: 10px;
+    background-color: #683ab700; /* Updated background color */
+    color: white;
+    width: 98%; /* Subtle shadow */
+}
+
+/* Logo on the left */
+.top-dashboard img {
+    height: 100px; /* Control logo height */
+    width: auto;
+    border-radius: 10px;
+}
+
+/* Right section with anchors */
+.top-dashboard div {
+    display: flex;
+    gap: 15px; /* Space between each anchor */
+}
+
+/* Anchors styling */
+.top-dashboard div a {
+    color: #ffeb3b; /* Changed link color */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for the anchors */
+.top-dashboard div a:hover {
+    color: #ffffff; /* Change color to white on hover */
+    transform: translateY(-3px); /* Lift effect */
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8); /* Soft glow effect */
+}
+
+/* Container for the content */
+.container {
+    width: 100%;
+    display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px; /* Added margin to avoid content overlapping with navbar */
+}
+
+/* Row styling */
+.row {
+    min-height: 300px;
+    padding: 10px;
+    border-radius: 25px;
+    display: flex;
+   flex-direction: column;
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+@media(width <= 1400px) {
+    .row{
+        flex-direction: column;
+        width: auto;
+    }
+    .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+/* Information section */
+.Information-section {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Columns */
+.column {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.column img {
+    width: 275px;
+    height: 250px;
+    border-radius: 25px;
+}
+
+/* Button area */
+.button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* Style for Delete Button */
+.Delete-Button {
+    background-color: #ff4d4d; /* Red for delete */
+    color: white;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Delete-Button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover effect for Delete Button */
+.Delete-Button:hover {
+    background-color: #e60000; /* Darker red on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Style for Update Button */
+.Update-Button {
+    background-color: #4CAF50; /* Green for update */
+    color: white;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Update-Button a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover effect for Update Button */
+.Update-Button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}

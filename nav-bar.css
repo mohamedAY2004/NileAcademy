@@ -1,0 +1,41 @@
+
+/* Styling for the top dashboard */
+.top-dashboard {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center vertically */
+    padding: 15px 30px; /* Added padding for breathing space */
+    border-radius: 10px;
+    background-color: #683ab700; /* Updated background color */
+    color: white;
+    width: 95%; /* Subtle shadow */
+}
+
+/* Logo on the left */
+.top-dashboard img {
+    height: 100px; /* Control logo height */
+    width: auto;
+    border-radius: 10px;
+}
+
+/* Right section with anchors */
+.top-dashboard div {
+    display: flex;
+    gap: 15px; /* Space between each anchor */
+}
+
+/* Anchors styling */
+.top-dashboard div a {
+    color: #ffeb3b; /* Changed link color */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for the anchors */
+.top-dashboard div a:hover {
+    color: #ffffff; /* Change color to white on hover */
+    transform: translateY(-3px); /* Lift effect */
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8); /* Soft glow effect */
+}
