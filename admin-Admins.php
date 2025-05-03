@@ -7,12 +7,10 @@ if(!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins"){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improved Dashboard</title>
-
+    <title>Admins</title>
     <link rel="stylesheet" href="./tickets.css">
 </head>
 

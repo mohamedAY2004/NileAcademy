@@ -40,7 +40,7 @@
                     $row=mysqli_fetch_array($result);
                     $_SESSION["Type"] = $Type;
                     $_SESSION["Row"]=$row;
-                    header("Location: Welcome.php");
+                    header("Location: index.php");
                 } else {
                     echo '<div class="error-message">Wrong phone number or password or type</div>';
                 }

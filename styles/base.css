@@ -1,0 +1,50 @@
+/* Reset and common styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 1vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Common gradient background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #000066 0%, #99ccff 100%);
+    z-index: -1;
+}
+
+/* Common card styles */
+.card {
+    background-color: rgba(249, 249, 249, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card hr {
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}

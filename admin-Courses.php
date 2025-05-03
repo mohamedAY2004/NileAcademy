@@ -60,40 +60,39 @@ if(!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins"){
         }
         
         ?>
-            <!-- Single ROW -->
-            <!-- <div class="row">
-            <div class="Information-section">
-                <div class="column">
-                    <img src='./uploads/image1.jpg'/>
-                </div>
-                <div class="column">
-                    <h3 class="mini-title">Name</h3>
-                    <p>Arabic</p>
-                </div>
-                <div class="column">
-                    <h3 class="mini-title">Id</h3>
-                    <p>1</p>
-                </div>
-            </div>
-            <div class="button-area">
-                <button class="Delete-Button">
-                    <a href="#">Delete</a>
-                </button>
-                <button class="Update-Button">
-                    <a href="#">Update</a>
-                </button>
-            </div>    
-        </div> -->
-            <!-- ADD BUTTON -->
-
         </div>
         <div>
             <button class="Update-Button">
                 <a href="admin-AddCourse.php">Add Course</a>
             </button>
         </div>
-    
-    
+        <div class="confirm hidden">
+            <button class="close-confirm">&times;</button>
+            <h1>I'm a Confirm window 😍</h1>
+
+        </div>
+        <div class="overlay hidden"></div>
+        <script>
+        const confirm = document.querySelector('.confirm');
+        const overlay = document.querySelector('.overlay');
+        const closeConfirm = () => {
+            if (confirm.classList.contains('hidden')) return;
+            confirm.classList.add('hidden');
+            overlay.classList.add('hidden');
+        }
+        const openConfirm = () => {
+            if (confirm.classList.contains('hidden')) {
+                confirm.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+            }
+        }
+        document.addEventListener('click', closeConfirm);
+        document.addEventListener('keydown', function(e) {
+
+            if (e.keyCode === 27) closeConfirm();
+            else openConfirm();
+        })
+        </script>
 </body>
 
 </html>

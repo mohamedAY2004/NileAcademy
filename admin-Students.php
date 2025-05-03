@@ -1,18 +1,22 @@
-<?php
+<?php 
 session_start();
-if (!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins") {
+if(!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins"){
     header("Location: Login.php");
     exit(); // Prevents further code execution after the redirect
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improved Dashboard</title>
+    <title>Students</title>
     <link rel="stylesheet" href="./tickets.css">
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this record?");
+        }
+    </script>
 </head>
 
 <body>
@@ -38,6 +42,8 @@ if (!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins") {
                 $image_name = $row["image_name"];
                 $student_name = $row["student_name"];
                 $student_phone = $row["student_phone"];
+                $student_balance = $row["student_balance"]; // Add this line
+
                 echo '<div class="row">';
                 echo '<div class="Information-section">';
                 echo '<div class="column">';
@@ -51,11 +57,22 @@ if (!isset($_SESSION["Type"]) || $_SESSION["Type"] != "admins") {
                 echo "<h3 class='mini-title'>Student Phone</h3>";
                 echo " <p>$student_phone</p>";
                 echo '</div>';
+                echo '<div class="column">';
+                echo "<h3 class='mini-title'>Balance</h3>";
+                echo " <p>$" . number_format($student_balance, 2) . "</p>";
+                echo '</div>';
                 echo '</div>';
                 echo '<div class="button-area">';
-                echo '<button class="Delete-Button">';
-                echo "<a href='admin-DeleteStudent.php?student_id=$student_id'>Delete</a>";
-                echo  '</button>';
+                //
+                echo  '<form method="POST" action="admin-DeleteStudent.php">';
+                echo  "<input type='hidden' name='student_id' value='$student_id'>";
+                echo '<button class="Delete-Button" onclick="return confirmDelete();"> Delete</button>';
+                echo '</form>';
+
+                //
+                // echo '<button class="Delete-Button">';
+                // echo "<a href='admin-DeleteStudent.php?student_id=$student_id'>Delete</a>";
+                // echo  '</button>';
                 echo '<button class="Update-Button">';
                 echo "<a href='admin-UpdateStudent.php?student_id=$student_id'>Update</a>";
                 echo "</div>";

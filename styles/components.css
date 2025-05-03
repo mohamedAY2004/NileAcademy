@@ -1,0 +1,66 @@
+/* Button styles */
+.book-button, 
+.Update-Button, 
+.Delete-Button {
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.book-button {
+    background: #007bff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.book-button:hover {
+    background: #0056b3;
+}
+
+.Update-Button {
+    background-color: #4CAF50;
+}
+
+.Update-Button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+}
+
+.Delete-Button {
+    background-color: #ff4d4d;
+}
+
+.Delete-Button:hover {
+    background-color: #e60000;
+    transform: translateY(-5px);
+}
+
+/* Form styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
