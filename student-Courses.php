@@ -18,7 +18,7 @@ if(!isset($_SESSION["Type"]) || $_SESSION["Type"] != "students"){
     <div class="top-dashboard">
         <img src="./nile-academy-high-resolution-logo.png" alt="Logo">
         <div>
-            <a href="MyAccount.php?student_id=<?php echo $_SESSION["Row"]["student_id"];?>">MyAccount</a>
+            <a href="student-MyAccount.php?student_id=<?php echo $_SESSION["Row"]["student_id"];?>">MyAccount</a>
             <a href="Logout.php">Logout</a>
         </div>
     </div>
