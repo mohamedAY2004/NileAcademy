@@ -7,14 +7,13 @@ Nile Academy LMS is a comprehensive web-based learning management system designe
 ### For Administrators
 - Manage teachers, students, and courses
 - Monitor attendance and payments
-- Handle course assignments
 - View system analytics
 
 ### For Teachers
 - Manage lectures and schedules
 - Track student attendance
 - View assigned courses
-- Monitor student progress
+- Monitor student attendance
 
 ### For Students
 - View enrolled courses
@@ -67,14 +66,17 @@ Nile Academy LMS is a comprehensive web-based learning management system designe
 ## 👥 Default Users
 
 ### Admin
+- Phone:01112273329
 - Username: mohamed hashim
 - Password: admin1
 
 ### Teacher
+- Phone:01112273328
 - Username: Ahmed Samir
 - Password: teacher2
 
 ### Student
+- Phone:01112273329
 - Username: ahmed ali
 - Password: student1
 
@@ -112,7 +114,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Authors
 
-- **Nile Academy Team** - *Initial work*
+- **Mohamed Younes** - *Initial work*
 
 ## 🙏 Acknowledgments
 
@@ -125,4 +127,4 @@ For support, please contact the development team or open an issue in the reposit
 
 ---
 
-Made with ❤️ by Nile Academy Team 
+Made with ❤️ by Mohamed Younes
